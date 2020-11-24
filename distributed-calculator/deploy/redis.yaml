@@ -6,6 +6,8 @@ spec:
   type: state.redis
   metadata:
   - name: redisHost
-    value: YOUR_REDIS_HOST_HERE
+    value: redis-master.dapr-system.svc.cluster.local:6379
   - name: redisPassword
-    value: YOUR_REDIS_PASSWORD_HERE
+    secretKeyRef:
+      name: redis
+      key: redis-password
